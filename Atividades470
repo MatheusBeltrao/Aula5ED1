@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Atividades470 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int num, pri;
+        System.out.print("Digite um número > 0: ");
+        num = scanner.nextInt();
+        pri = primo(num);
+
+        if (pri == 0) {
+            System.out.println(num + " é primo");
+        } else {
+            System.out.println(num + " não é primo");
+        }
+
+        System.out.println();
+    }
+
+    public static int primo(int num) {
+        int i;
+        for (i = 2; i <= num / 2; i++) {
+            if (num % i == 0) {
+                return i;
+            }
+        }
+        return 0;
+    }
+}
