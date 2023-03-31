@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Atividades480 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n, x;
+        System.out.print("Digite um número: ");
+        n = scanner.nextInt();
+        x = reverso(n);
+        System.out.print("\n" + n + " - " + x);
+        if (x == n) {
+            System.out.println("\nÉ um número capicua");
+        } else {
+            System.out.println("\nNão é um número capicua");
+        }
+    }
+
+    public static int reverso(int n) {
+        int r = 0;
+        while (n > 0) {
+            r = r * 10 + n % 10;
+            n /= 10;
+        }
+        return r;
+    }
+}
+
