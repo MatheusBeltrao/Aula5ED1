@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Ativade462 {
+public class Atividade462 {
     
     double n1,n2,n3,m;
     Scanner scanner = new Scanner(System.in);
