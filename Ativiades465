@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Atividades {
+    public static void main(String[] args) {
+       Scanner scanner = new Scanner(System.in);
+        int num1, num2;
+      System.out.println("Digite numero 1: ");
+      num1 = scanner.nextInt();
+      System.out.println("\nDigite numero 2: ");
+      num2 = scanner.nextInt();
+      System.out.println("\n");
+
+      verifica(num1 , num2);
+
+      
+    }
+    public static void verifica(int num1, int num2) {
+        if (num1 > num2) {
+            System.out.println(num1 + " é maior que " + num2);
+        } else if (num2 > num1) {
+            System.out.println(num2 + " é maior que " + num1);
+        } else {
+            System.out.println(num1 + " e " + num2 + " são iguais");
+        }
+    }
+
+}
