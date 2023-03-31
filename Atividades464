@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class Atividades464 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        double ang, g;
+        System.out.print("Digite o ângulo em radianos: ");
+        ang = scanner.nextDouble();
+
+        g = graus(ang);
+
+        System.out.printf("Radianos: %.2f Graus: %.2f\n", ang, g);
+    }
+
+    public static double graus(double ang) {
+        return ang * 180.0 / Math.PI;
+    }
+}
