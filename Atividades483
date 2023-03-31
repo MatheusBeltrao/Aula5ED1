@@ -1,0 +1,37 @@
+public class Atividades {
+    public static void main(String[] args) {
+        int L, c, num[], num1[];
+        num = new int[4];
+        num1 = new int[4];
+        
+        for (L = 0; L < 4; L++) {
+            System.out.printf("\n\nDigite 1 numero %d: ", L+1);
+            num[L] = Integer.parseInt(System.console().readLine());
+        }
+        
+        for (L = 0; L < 4; L++) {
+            System.out.printf("\n\nDigite 2 numero %d: ", L+1);
+            num1[L] = Integer.parseInt(System.console().readLine());
+        }
+        
+        c = produtointerno(num, num1, 4);
+        
+        System.out.println("\nVETOR A\tVETOR B\n");
+        
+        for (L = 0; L < 4; L++) {
+            System.out.printf("\n%d\t%d", num[L], num1[L]);
+        }
+        
+        System.out.printf("\n\nproduto interno: %d\n\n", c);
+    }
+    
+    public static int produtointerno(int A[], int B[], int tam) {
+        int L, soma = 0;
+        
+        for (L = 0; L < tam; L++) {
+            soma += A[L] * B[L];
+        }
+        
+        return soma;
+    }
+}
