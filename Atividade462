@@ -1,0 +1,20 @@
+import java.util.Scanner;
+public class Ativade462 {
+    
+    double n1,n2,n3,m;
+    Scanner scanner = new Scanner(System.in);
+
+    System.out.println("Digite nota 1: ");
+    n1 = scanner.nextDoble();
+    System.out.println("Digite nota 2: ");
+    n2 = scanner.nextDoble();
+    System.out.println("Digite nota 3: ");
+    n3 = scanner.nextDoble();
+    
+    m = media (n1,n2,n3);
+    System.out.println("\N Media aritmetica e " + m);
+    System.out.println("Media armazena em variavel = "+ m);
+}
+    public static double media(double num1,double  num2,double num3) {
+        return (num1 + num2 +  num3)/ 3;
+    }
