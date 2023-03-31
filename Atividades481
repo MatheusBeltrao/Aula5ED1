@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Atividades481 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int num, base, c;
+        System.out.print("digite numero maior ou igual a 0: ");
+        num = scanner.nextInt();
+        while (num < 0) {
+            System.out.print("Numero negativo. Digite numero maior ou igual a 0: ");
+            num = scanner.nextInt();
+        }
+        System.out.print("digite a base em deseja representa-lo(2-10): ");
+        base = scanner.nextInt();
+        while (base < 2 || base > 10) {
+            System.out.print("Nao sei converter. Digite a base em deseja representa-lo(2-10): ");
+            base = scanner.nextInt();
+        }
+        c = converte(num, base);
+        System.out.println("numero em decimal: " + num);
+        System.out.println("numero na base " + base + ": " + c);
+    }
+    
+    public static int converte(int num, int base) {
+        int c = 0, mult = 1;
+        while (num > 0) {
+            c += (num % base) * mult;
+            num /= base;
+            mult *= 10;
+        }
+        return c;
+    }
+}
