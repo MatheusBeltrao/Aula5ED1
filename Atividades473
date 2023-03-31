@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Atividades473 {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite uma letra: ");
+        String letra = scanner.next();
+
+        if (maiuscula(letra) == 1) {
+            System.out.println("É uma consoante");
+        } else {
+            System.out.println("Não é uma consoante");
+        }
+    }
+
+    public static int maiuscula(String letra) {
+        char c = letra.charAt(0);
+        if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z' && c != 'A' && c != 'E' && c != 'I' && c != 'O' && c != 'U')) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+}
