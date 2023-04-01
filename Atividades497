@@ -1,0 +1,57 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Atividades497 {
+  public static void main(String[] args) {
+    int L, c, n, aux;
+    int[] num = new int[10];
+    Scanner scanner = new Scanner(System.in);
+
+    for (L = 0; L < 10; L++) {
+      System.out.print("Digite numero " + (L+1) + ": ");
+      num[L] = scanner.nextInt();
+    }
+
+    System.out.print("Digite numero de busca: ");
+    n = scanner.nextInt();
+
+    ordena(num, 10);
+    c = busca(num, 10, n);
+
+    System.out.println("\nVETOR\n");
+    for (L = 0; L < 10; L++) {
+      System.out.println((L+1) + " - " + num[L]);
+    }
+    c++;
+
+    if (c != 0) {
+      System.out.println("\n\nposicao no vetor: " + c);
+    } else {
+      System.out.println("\n\nNÃO ENCONTRADO");
+    }
+    System.out.println();
+  }
+
+  public static void ordena(int[] vetor, int tamanho) {
+    int i, j, aux;
+    for (i = 0; i < tamanho - 1; i++) {
+      for (j = i + 1; j < tamanho; j++) {
+        if (vetor[i] > vetor[j]) {
+          aux = vetor[i];
+          vetor[i] = vetor[j];
+          vetor[j] = aux;
+        }
+      }
+    }
+  }
+
+  public static int busca(int[] vetor, int tamanho, int n) {
+    int i;
+    for (i = 0; i < tamanho; i++) {
+      if (vetor[i] == n) {
+        return i;
+      }
+    }
+    return -1;
+  }
+}
