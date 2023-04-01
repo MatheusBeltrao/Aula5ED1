@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Atividades487 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int L, n = 10, num[] = new int[n];
+        for (L = 0; L < n; L++) {
+            System.out.print("Digite numero " + (L+1) + ": ");
+            num[L] = scanner.nextInt();
+        }
+        inverte(num, n);
+        System.out.println("\nVETOR\n");
+        for (L = 0; L < n; L++) {
+            System.out.println((L+1) + " - " + num[L]);
+        }
+        System.out.println();
+    }
+
+    static void inverte(int num[], int n) {
+        int L, aux;
+        for (L = 0; L < n / 2; L++) {
+            aux = num[L];
+            num[L] = num[n - L - 1];
+            num[n - L - 1] = aux;
+        }
+    }
+}
