@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Atividades485 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int L, c, num[] = new int[6];
+        String num1[] = new String[6];
+
+        for (L = 0; L < 6; L++) {
+            System.out.print("Digite numero " + L + ": ");
+            num[L] = sc.nextInt();
+        }
+
+        for (L = 0; L < 6; L++) {
+            System.out.print("Digite caractere " + (L+1) + ": ");
+            num1[L] = sc.next();
+        }
+
+        multivetor(num, num1, 6);
+
+        System.out.println();
+    }
+
+    static void multivetor(int num[], String num1[], int n) {
+        int L;
+        for (L = 0; L < n; L++) {
+            System.out.print(num[L] + " " + num1[L] + "\t");
+        }
+    }
+}
