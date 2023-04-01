@@ -1,0 +1,84 @@
+import java.util.Scanner;
+
+public class Atividades499{
+  public static void main(String[] args) {
+    int[] num = new int[5];
+    int L, flag = 0, op;
+    Scanner scanner = new Scanner(System.in);
+
+    for (L = 0; L < 5; L++) {
+      num[L] = 0;
+    }
+
+    do {
+      System.out.println("\n\n\n");
+      System.out.println(" MENU VETOR - FUNCAO ");
+      System.out.println("\n1 Dados do VETOR");
+      System.out.println("\n2 Ordena VETOR");
+      System.out.println("\n3 Imprime VETOR");
+      System.out.println("\n4 Sai do programa");
+      System.out.print("\nOPCAO: ");
+      op = scanner.nextInt();
+
+      switch(op) {
+        case 1:
+          entrada(num, 5);
+          flag = 1;
+          break;
+
+        case 2:
+          if (flag == 1) {
+            ordena(num, 5);
+          } else {
+            System.out.println("\nEscolha primeiro opcao 1");
+          }
+          break;
+
+        case 3:
+          if (flag == 1) {
+            imprime(num, 5);
+          } else {
+            System.out.println("\nEscolha primeiro opcao 1");
+          }
+          break;
+
+        case 4:
+          System.out.println("\nSaindo do Algoritmo");
+          break;
+
+        default:
+          System.out.println("\nOpcao invalida");
+      }
+    } while (op != 4);
+    System.out.println();
+  }
+
+  public static void entrada(int[] vetor, int tamanho) {
+    int L;
+    Scanner scanner = new Scanner(System.in);
+    for (L = 0; L < tamanho; L++) {
+      System.out.print("Digite um numero: ");
+      vetor[L] = scanner.nextInt();
+    }
+  }
+
+  public static void ordena(int[] vetor, int tamanho) {
+    int i, j, aux;
+    for (i = 0; i < tamanho - 1; i++) {
+      for (j = i + 1; j < tamanho; j++) {
+        if (vetor[i] > vetor[j]) {
+          aux = vetor[i];
+          vetor[i] = vetor[j];
+          vetor[j] = aux;
+        }
+      }
+    }
+  }
+
+  public static void imprime(int[] vetor, int tamanho) {
+    int L;
+    for (L = 0; L < tamanho; L++) {
+      System.out.println(vetor[L]);
+    }
+  }
+}
